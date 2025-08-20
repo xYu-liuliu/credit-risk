@@ -9,11 +9,13 @@ from pandas.api.types import CategoricalDtype
 import math
 
 SEED = 42
-DATA_DIR = Path(r"E:/Home Credit Processed Feature")
-TRAIN_F  = DATA_DIR / "train_sel.parquet"    
-OUT_PKL  = DATA_DIR / "best_params_timecv_prauc.pkl"
-OUT_MODEL= DATA_DIR / "lgbm_timecv_prauc.txt"
+DATA_DIR =  Path("data/processed") 
+MODEL_DIR = Path("data/model") 
+MODEL_DIR.mkdir(exist_ok=True, parents=True)
 
+TRAIN_F  = DATA_DIR / "train_sel.parquet"    
+OUT_PKL  = MODEL_DIR / "best_params_timecv_prauc.pkl"
+OUT_MODEL= MODEL_DIR / "lgbm_timecv_prauc.txt"
 
 def make_expanding_folds(df: pd.DataFrame,
                          time_col: str = "WEEK_NUM",
@@ -184,6 +186,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
