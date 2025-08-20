@@ -154,8 +154,8 @@ class RiskDataPipeline:
 
 
 # load
-IN_DIR  = Path(r"E:/Home Credit Processed Feature")
-OUT_DIR = Path(r"E:/Home Credit Processed Feature")
+IN_DIR  = Path("data/splits")  
+OUT_DIR = Path("data/processed") 
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 train_file = IN_DIR / "df_train_cut_0_69_ADDCOMBO.parquet"
@@ -195,6 +195,7 @@ df_test_proc[TARGET]  = y_test
 df_train_proc.to_parquet(OUT_DIR / "df_train_cut_0_69_processed.parquet", engine="pyarrow", index=False, compression="zstd", use_dictionary=False)
 df_val_proc.to_parquet(OUT_DIR / "df_val_cut_70_74_processed.parquet", engine="pyarrow", index=False, compression="zstd", use_dictionary=False)
 df_test_proc.to_parquet(OUT_DIR / "df_test_cut_75_91_processed.parquet", engine="pyarrow", index=False, compression="zstd", use_dictionary=False)
+
 
 
 
