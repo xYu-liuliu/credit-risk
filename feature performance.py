@@ -6,15 +6,18 @@ import matplotlib.pyplot as plt
 from pandas.api.types import CategoricalDtype
 from sklearn.metrics import roc_auc_score
 
-DATA_DIR   = Path(r"E:/Home Credit Processed Feature")
+DATA_DIR = Path("data/processed")
+PRED_DIR = Path("data/prediction")
+MODEL_DIR = Path("data/model")
+
 TRAIN_PARQ = DATA_DIR / "train_sel.parquet"   
 VAL_PARQ   = DATA_DIR / "val_sel.parquet"    
 TEST_PARQ  = DATA_DIR / "test_sel.parquet"    
 
-VAL_PRED   = DATA_DIR / "val_pred.csv"        
-TEST_PRED  = DATA_DIR / "test_pred.csv"      
+VAL_PRED   = PRED_DIR / "val_pred.csv"        
+TEST_PRED  = PRED_DIR / "test_pred.csv"      
 
-MODEL_FILE = DATA_DIR / "lgbm_timecv_prauc.txt"
+MODEL_FILE = MODEL_DIR / "lgbm_timecv_prauc.txt"
 plt.style.use("seaborn-v0_8") 
 
 OUT_DIR    = DATA_DIR / "feature analysis"
@@ -368,4 +371,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
