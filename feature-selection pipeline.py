@@ -116,9 +116,9 @@ class GainShapSelector:
 
 
 def main():
-    data_dir = Path(r"E:/Home Credit Processed Feature")
+    data_dir = Path("data/feature_selection")
     train_f, val_f, test_f = [data_dir / f for f in
-        ("train_corr.parquet", "val_corr.parquet", "test_corr.parquet")]
+          ("train_corr.parquet", "val_corr.parquet", "test_corr.parquet")]
 
     train_df = pd.read_parquet(train_f)
 
@@ -126,7 +126,8 @@ def main():
     train_sel = selector.fit_transform(train_df)
 
     # save train
-    out_dir = Path(r"E:/Home Credit Processed Feature")
+    out_dir = Path("data/feature_selection")
+    out_dir.mkdir(parents=True, exist_ok=True)
     
     train_sel.to_parquet(out_dir / "train_sel.parquet", compression="zstd", use_dictionary=False)
 
@@ -144,3 +145,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
