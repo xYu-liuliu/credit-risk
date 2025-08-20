@@ -3,8 +3,12 @@ import pandas as pd
 import lightgbm as lgb
 from pandas.api.types import CategoricalDtype
 
-DATA_DIR = Path(r"E:/Home Credit Processed Feature")
-MODEL_F  = DATA_DIR / "lgbm_timecv_prauc.txt"
+DATA_DIR = Path("data/processed")
+MODEL_DIR  = Path("data/model")
+PRED_DIR  = Path("data/prediction")
+
+
+MODEL_F = MODEL_DIR / "lgbm_timecv_prauc.txt"
 
 INPUTS = {
     "TRAIN": DATA_DIR / "train_sel.parquet",
@@ -13,9 +17,9 @@ INPUTS = {
 }
 
 OUTPUTS = {
-    "TRAIN": DATA_DIR / "train_pred.csv",
-    "VAL":   DATA_DIR / "val_pred.csv",
-    "TEST":  DATA_DIR / "test_pred.csv",
+    "TRAIN": PRED_DIR / "train_pred.csv",
+    "VAL":   PRED_DIR / "val_pred.csv",
+    "TEST":  PRED_DIR / "test_pred.csv",
 }
 
 NON_FEATURES = {"target", "WEEK_NUM", "case_id"}
@@ -73,6 +77,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
