@@ -32,5 +32,5 @@ credit-risk-modeling/
 ├─ feature performance.py            # Stage 7: Feature performance (IV, KS, PSI, Top10 stability)  
 ├─ feature analysis.py               # Stage 7: Feature interpretation (SHAP dependence, weekly SHAP)  
 ├─ README.md                         # intro  
-└─ Credit_Risk_Report.pdf            # Full project report  
+└─ credit risk.pdf            # Full project report  
 
