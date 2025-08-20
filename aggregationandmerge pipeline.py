@@ -254,7 +254,7 @@ def reduce_group(grps):
 
 
 
-TRAIN_DIR = Path("/home/ubuntu/train")
+TRAIN_DIR = Path("data/raw")
 
 data_store = {
     "df_base": read_file(TRAIN_DIR / "train_base.parquet"),
@@ -297,7 +297,7 @@ print("Combo features in df_train:", present_combo)
 df_train, cat_cols = to_pandas(df_train)
 df_train = reduce_mem_usage(df_train)
 
-OUT_DIR = "/home/ubuntu/processed_output"
+OUT_DIR = Path("data/processed")
 os.makedirs(OUT_DIR, exist_ok=True)
 
 # Write Parquet
@@ -307,6 +307,7 @@ df_train.to_parquet(
     engine="pyarrow",   
     compression="zstd"  
 )
+
 
 
 
