@@ -128,8 +128,8 @@ class CategoricalEncoder:
 
 if __name__ == "__main__":
     # load
-    IN_DIR = Path(r"E:/Home Credit Processed Feature")
-    OUT_DIR = Path(r"E:/Home Credit Processed Feature")
+    IN_DIR  = Path("data/processed") 
+    OUT_DIR = Path("data/processed") 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
 
     train_file = IN_DIR / "df_train_cut_0_69_processed.parquet"
@@ -179,4 +179,5 @@ if __name__ == "__main__":
 
     print("✅ Encoding complete! Files saved in:", OUT_DIR)
     
+
 
