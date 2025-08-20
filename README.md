@@ -1,13 +1,17 @@
 credit-risk-modeling/
 │
 ├─ data/
-│   ├─ raw/              # Original Kaggle parquet files
-│   ├─ aggregation/      # Stage 1 output (all_data.parquet)
-│   ├─ splits/           # Stage 2 output (*_ADDCOMBO.parquet)
-│   ├─ processed/        # Stage 3 output (*_processed.parquet)
-│   ├─ feature_selection/# Stage 4 outputs (encoded parquet, correlation/IV/SHAP/Gain)
-│   └─ model/            # Stage 5 trained models & predictions
-│
+│    ├─ raw/              # Original Kaggle parquet files
+│    ├─ aggregation/      # Stage 1 output (all_data.parquet)
+│    ├─ splits/           # Stage 2 output (*_ADDCOMBO.parquet)
+│    ├─ processed/        # Stage 3 output (*_processed.parquet)
+│    ├─ feature_selection/# Stage 4 outputs (encoded parquet, correlation/IV/SHAP/Gain)
+│    └─ model/            # Stage 5 trained models & predictions
+│    └─ prediction/
+│    └─ analysis/
+          ├── model/                
+│         └── business/     
+          └── feature/  
 ├─ fill.py                         # Utility: missing value filling rules
 ├─ Combo_feature.py                # Utility: row-level combo features
 ├─ aggregationandmerge_pipeline.py # Stage 1: Aggregate & merge tables
