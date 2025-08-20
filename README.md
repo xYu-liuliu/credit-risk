@@ -5,8 +5,8 @@ credit-risk-modeling/
 │    ├─ raw/                # Original Kaggle parquet files  
 │    ├─ aggregation/        # Stage 1 output (all_data.parquet)  
 │    ├─ splits/             # Stage 2 output (*_ADDCOMBO.parquet)  
-│    ├─ processed/          # Stage 3 output (*_processed.parquet)  
-│    ├─ feature_selection/  # Stage 4 outputs (encoded parquet, correlation/IV/SHAP/Gain)  
+│    ├─ processed/          # Stage 3 output (*_processed.parquet, *_encoded parquet)  
+│    ├─ feature_selection/  # Stage 4 outputs (correlation/IV/SHAP/Gain)  
 │    ├─ model/              # Stage 5 trained models  
 │    ├─ prediction/         # Stage 6 predictions for analysis  
 │    └─ analysis/           # Stage 7 analysis results  
