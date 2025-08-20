@@ -1,7 +1,7 @@
 credit-risk-modeling/
 │
 ├─ data/
-│    ├─ raw/                # Original Kaggle parquet files
+│    ├─ raw/                # Original Kaggle parquet files  
 │    ├─ aggregation/        # Stage 1 output (all_data.parquet)
 │    ├─ splits/             # Stage 2 output (*_ADDCOMBO.parquet)
 │    ├─ processed/          # Stage 3 output (*_processed.parquet)
