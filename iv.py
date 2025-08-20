@@ -6,7 +6,7 @@ from pathlib import Path
 
 IV_THR   = 0.005                     
 EXCLUDE  = ["WEEK_NUM", "case_id"]   
-DIR      = Path(r"E:/Home Credit Processed Feature")  
+DIR = Path("data/feature_selection")
 
 
 def iv_qcut(
@@ -100,7 +100,7 @@ test.drop (columns=drop_iv, inplace=True, errors="ignore")
 
 # Save filtered datasets
 
-out = Path(r"E:/Home Credit Processed Feature")
+out = Path("data/feature_selection")
 
 train.assign(target=y_train).to_parquet(out / "train_iv.parquet", compression="zstd")
 val.assign  (target=y_val)  .to_parquet(out / "val_iv.parquet",   compression="zstd")
@@ -110,3 +110,4 @@ test.assign (target=y_test) .to_parquet(out / "test_iv.parquet",  compression="z
 print(f"🗑  IV < {IV_THR} — dropped {len(drop_iv)} columns (excluded {EXCLUDE})")
 print(drop_iv)
 print(f"✅ IV filtering complete. Files saved to: {out}")
+
