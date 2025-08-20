@@ -79,7 +79,7 @@ train_cln = train[kept_cols]
 val_cln   = val[kept_cols]
 test_cln  = test[kept_cols]
 
-out = Path(r"E:/Home Credit Processed Feature")
+out = Path("data/feature_selection")
 out.mkdir(exist_ok=True)
 
 train_cln["target"] = train_cln["target"].astype("Int64")  
@@ -91,5 +91,6 @@ val_cln.to_parquet(out / "val_corr.parquet",   compression="zstd")
 test_cln .to_parquet(out / "test_corr.parquet",  compression="zstd")
 
 print(f"✅ Correlation filtering complete. Cleaned files saved to: {out}")
+
 
 
