@@ -7,7 +7,8 @@ from kneed import KneeLocator
 from collections import Counter
 
 # load 
-PATH = Path(r"E:/Home Credit Processed Feature/train_corr.parquet")
+BASE = Path("data/feature_selection")
+PATH = BASE / "train_corr.parquet"
 df   = pd.read_parquet(PATH, dtype_backend="pyarrow")   
 df["target"] = df["target"].astype("Int64")
 
@@ -132,5 +133,6 @@ print("Kneedle knee point:", knee)
 
 
 # save
-gain_df.to_csv("gain_importance.csv", index=False)
+gain_df.to_csv(BASE / "gain_importance.csv", index=False)
 print(f"✅ gain_importance.csv saved — elbow at roughly Top-{elbow_idx+1}")
+
