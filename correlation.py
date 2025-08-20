@@ -5,7 +5,7 @@ from pathlib import Path
 
 CORR_THR = 0.97                      
 EXCLUDE  = ["WEEK_NUM", "case_id", "target"]    
-DIR      = Path(r"E:/Home Credit Processed Feature")
+DIR      = Path("data/processed")
 
 PREF = {
     "mean":   1,
@@ -91,4 +91,5 @@ val_cln.to_parquet(out / "val_corr.parquet",   compression="zstd")
 test_cln .to_parquet(out / "test_corr.parquet",  compression="zstd")
 
 print(f"✅ Correlation filtering complete. Cleaned files saved to: {out}")
+
 
