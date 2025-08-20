@@ -5,11 +5,11 @@ from sklearn.metrics import average_precision_score, roc_auc_score, brier_score_
 import matplotlib.pyplot as plt
 
 
-DATA_DIR  = Path(r"E:/Home Credit Processed Feature")
+DATA_DIR  = Path("data/prediction")   
 TRAIN_PRED= DATA_DIR / "train_pred.csv"
 VAL_PRED  = DATA_DIR / "val_pred.csv"
 TEST_PRED = DATA_DIR / "test_pred.csv"
-OUT_DIR   = DATA_DIR / "model analysis"
+OUT_DIR   = Path("data/analysis/model")    
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 plt.style.use("seaborn-v0_8") 
@@ -246,4 +246,5 @@ def main():
     print(f"Saved weekly PSI plots → {test_psi_png}")
 
 if __name__ == "__main__":
+
     main()
