@@ -6,10 +6,11 @@ import matplotlib.pyplot as plt
 from pandas.api.types import CategoricalDtype
 from sklearn.metrics import roc_auc_score
 
-DATA_DIR = Path("data/processed")
+DATA_DIR = Path("data/feature_selection")
 PRED_DIR = Path("data/prediction")
 MODEL_DIR = Path("data/model")
 OUT_DIR   = Path("data/analysis/feature")   
+OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 TRAIN_PARQ = DATA_DIR / "train_sel.parquet"   
 VAL_PARQ   = DATA_DIR / "val_sel.parquet"    
@@ -372,6 +373,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
