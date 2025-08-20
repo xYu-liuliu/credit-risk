@@ -5,7 +5,7 @@ import numpy as np
 
 
 OUT_DIR = Path("data/splits") 
-INPUT_PATH = Path("data/processed/all_data.parquet")
+INPUT_PATH = Path("data/aggregation/all_data.parquet")
 df = pd.read_parquet(INPUT_PATH, engine="pyarrow")
 
 
@@ -71,6 +71,7 @@ train_df.to_parquet(OUT_DIR / "df_train_cut_0_69_ADDCOMBO.parquet", engine="pyar
 val_df  .to_parquet(OUT_DIR / "df_val_cut_70_74_ADDCOMBO.parquet", engine="pyarrow",  index=False, use_dictionary=False)
 test_df["target"] = test_df["target"].astype("int64")
 test_df .to_parquet(OUT_DIR / "df_test_cut_75_91_ADDCOMBO.parquet", engine="pyarrow", index=False, use_dictionary=False)
+
 
 
 
