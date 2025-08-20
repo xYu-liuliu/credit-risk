@@ -9,6 +9,7 @@ from sklearn.metrics import roc_auc_score
 DATA_DIR = Path("data/processed")
 PRED_DIR = Path("data/prediction")
 MODEL_DIR = Path("data/model")
+OUT_DIR   = Path("data/analysis/feature")   
 
 TRAIN_PARQ = DATA_DIR / "train_sel.parquet"   
 VAL_PARQ   = DATA_DIR / "val_sel.parquet"    
@@ -371,5 +372,6 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
