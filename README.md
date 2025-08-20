@@ -32,3 +32,4 @@ credit-risk-modeling/
 ├─ feature analysis.py               # Stage 7: Feature interpretation (SHAP dependence, weekly SHAP)
 ├─ README.md                         # intro
 └─ Credit_Risk_Report.pdf            # Full project report
+
