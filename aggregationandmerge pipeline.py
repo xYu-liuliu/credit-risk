@@ -297,8 +297,8 @@ print("Combo features in df_train:", present_combo)
 df_train, cat_cols = to_pandas(df_train)
 df_train = reduce_mem_usage(df_train)
 
-OUT_DIR = Path("data/processed")
-os.makedirs(OUT_DIR, exist_ok=True)
+OUT_DIR = Path("data/aggregation")
+OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Write Parquet
 df_train.to_parquet(
@@ -307,6 +307,7 @@ df_train.to_parquet(
     engine="pyarrow",   
     compression="zstd"  
 )
+
 
 
 
