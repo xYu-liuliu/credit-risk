@@ -4,8 +4,8 @@ import joblib
 import numpy as np
 
 
-OUT_DIR = Path("E:/Home Credit Processed Feature")
-INPUT_PATH = Path(r"E:/all_data.parquet")
+OUT_DIR = Path("data/splits") 
+INPUT_PATH = Path("data/processed/all_data.parquet")
 df = pd.read_parquet(INPUT_PATH, engine="pyarrow")
 
 
