@@ -7,7 +7,8 @@ from pandas.api.types import CategoricalDtype
 
 
 # load 
-PATH = Path(r"E:/Home Credit Processed Feature/train_corr.parquet")
+BASE = Path("data/feature_selection")
+PATH = BASE / "train_corr.parquet"
 df   = pd.read_parquet(PATH)   
 
 
@@ -78,7 +79,7 @@ print("Top-10 features by mean |SHAP|")
 print(shap_df.head(10))
 
 
-shap_df.to_csv("E:/Home Credit Processed Feature/shap_importance_full.csv", index=False)
+shap_df.to_csv(BASE / "shap_importance_full.csv", index=False)
 
 # plot
 import matplotlib.pyplot as plt
@@ -107,4 +108,5 @@ ax1.legend(loc="upper right")
 plt.tight_layout(); plt.show()
 
 
-fig.savefig("shap_importance_curve.png", dpi=300)
+fig.savefig(BASE / "shap_importance_curve.png", dpi=300)
+
