@@ -7,12 +7,14 @@ from pandas.api.types import CategoricalDtype
 import re
 
 
-DATA_DIR   = Path(r"E:/Home Credit Processed Feature")
-MODEL_FILE = DATA_DIR / "lgbm_timecv_prauc.txt"
+MODEL_DIR = Path("data/model")   
+DATA_DIR  = Path("data/feature_selection") 
+OUT_DIR   = Path("data/analysis/feature")
+OUT_DIR.mkdir(parents=True, exist_ok=True)
+
+MODEL_FILE = MODEL_DIR / "lgbm_timecv_prauc.txt"
 VAL_PARQ   = DATA_DIR / "val_sel.parquet"     
 TEST_PARQ  = DATA_DIR / "test_sel.parquet"    
-OUT_DIR    = DATA_DIR / "feature analysis"
-OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # Features to analyze
 FEATURES = [
@@ -204,6 +206,7 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
 
 
