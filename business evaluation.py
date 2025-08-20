@@ -4,11 +4,12 @@ import matplotlib.pyplot as plt
 from pathlib import Path
 
 
-DATA_DIR  = Path(r"E:/Home Credit Processed Feature")
+DATA_DIR  = Path("data/prediction")
 TRAIN_PRED= DATA_DIR / "train_pred.csv"  
 VAL_PRED  = DATA_DIR / "val_pred.csv"    
 TEST_PRED = DATA_DIR / "test_pred.csv"   
-OUT_DIR   = DATA_DIR / "business analysis"
+
+OUT_DIR   = Path("data/analysis/business") 
 OUT_DIR.mkdir(exist_ok=True, parents=True)
 
 CAPS = (0.016, 0.018, 0.020)     
@@ -318,4 +319,5 @@ if __name__ == "__main__":
 
     strategy_tab = build_strategy_table_with_stability(train, val, test, caps=CAPS)
     
+
 
