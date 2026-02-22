@@ -12,11 +12,11 @@ credit-risk-modeling/
 │  ├─ model/               # Stage 5 trained models
 │  ├─ prediction/          # Stage 6 predictions for analysis
 │  └─ analysis/            # Stage 7–8 analysis results
-│     ├─ model/            # Model performance metrics
-│     ├─ business/         # Business evaluation results
-│     ├─ feature/          # Feature interpretation & stability
-│     └─ calibration/    # Probability calibration results
-│     └─ conformal/      # Conformal prediction results
+│     ├─ model/            # Stage 7 Model performance metrics
+│     ├─ business/         # Stage 7 Business evaluation results
+│     ├─ feature/          # Stage 7 Feature interpretation & stability
+│     └─ calibration/    # Stage 8 Probability calibration results
+│     └─ conformal/      # Stage 8 Conformal prediction results
 │
 ├─ fill.py                           # Utility: missing value filling rules
 ├─ Combo_feature.py                  # Utility: row-level combo features
@@ -42,7 +42,7 @@ credit-risk-modeling/
 │
 ├─ calibration.py                    # Stage 8: Probability calibration (Platt / Isotonic)
 ├─ conformal_compare.py              # Stage 8: Compare RAW vs CAL conformal sets
-├─ conformal_under_distribution_shift.py  # Stage 8: Rolling conformal under temporal shift
+├─ conformal_under_distribution_shift.py  # Stage 8: deal with distribution shift 
 │
 ├─ README.md                         # Project introduction
 └─ credit risk.pdf                   # Full project report
