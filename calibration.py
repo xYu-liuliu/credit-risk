@@ -13,7 +13,7 @@ from sklearn.metrics import brier_score_loss
 DATA_DIR = Path(r"E:/Home Credit Processed Feature")
 VAL_PRED  = DATA_DIR / "val_pred.csv"
 TEST_PRED = DATA_DIR / "test_pred.csv"
-OUT_DIR   = DATA_DIR / "model analysis" / "calibration_compare"
+OUT_DIR   = DATA_DIR / "calibration_compare"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 plt.style.use("seaborn-v0_8")
@@ -265,4 +265,5 @@ def main():
         print("Saved:", wk_csv)
 
 if __name__ == "__main__":
+
     main()
