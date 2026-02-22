@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 
 DATA_DIR = Path(r"E:/Home Credit Processed Feature")
-CAL_DIR  = DATA_DIR / "model analysis" / "calibration_compare"
+CAL_DIR  = DATA_DIR / "calibration_compare"
 
 alpha = 0.05
 
@@ -78,4 +78,5 @@ def main():
     print("Saved:", out_csv)
 
 if __name__ == "__main__":
+
     main()
