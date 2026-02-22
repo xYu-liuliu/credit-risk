@@ -11,11 +11,11 @@ DATA_DIR = Path(r"E:/Home Credit Processed Feature")
 VAL_X_PATH  = DATA_DIR / "val_sel.parquet"
 TEST_X_PATH = DATA_DIR / "test_sel.parquet"
 
-CAL_DIR   = DATA_DIR / "model analysis" / "calibration_compare"
+CAL_DIR   = DATA_DIR / "calibration_compare"
 VAL_PRED  = CAL_DIR / "val_pred_with_cal_platt.csv"
 TEST_PRED = CAL_DIR / "test_pred_with_cal_platt.csv"
 
-OUT_DIR = DATA_DIR / "model analysis" / "rolling_conformal_w4"
+OUT_DIR = CAL_DIR / "rolling_conformal"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 # columns in pred files
@@ -24,7 +24,7 @@ COL_Y    = "target"
 COL_P    = "y_prob_cal"     # calibrated prob; if you want raw, change here
 
 # rolling window
-W = 8
+W = 6
 alpha = 0.05
 EPS = 1e-12
 CLIP_Q = 0.99
@@ -508,4 +508,5 @@ def run():
     print(summary.sort_values("coverage_overall", ascending=False))
 
 if __name__ == "__main__":
+
     run()
