@@ -40,10 +40,12 @@ credit-risk-modeling/
 ├─ feature performance.py            # Stage 7: Feature stability metrics
 ├─ feature analysis.py               # Stage 7: SHAP analysis
 │
-├─ calibration.py                    # Stage 8: Probability calibration (Platt / Isotonic)
-├─ conformal_compare.py              # Stage 8: Compare RAW vs CAL conformal sets
-├─ conformal_under_distribution_shift.py  # Stage 8: deal with distribution shift 
+├─ Research Extension
+│  ├─ calibration.py                    # Stage 8: Probability calibration (Platt / Isotonic)
+│  ├─ conformal_compare.py              # Stage 8: Compare RAW vs CAL conformal sets
+│  ├─ conformal_under_distribution_shift.py  # Stage 8: deal with distribution shift 
 │
 ├─ README.md                         # Project introduction
-└─ credit risk.pdf                   # Full project report
+└─ credit risk.pdf                   # project report + Appendix (Paper Style)
 
+Appendix B in the report contains a methodological extension on conformal prediction under distribution shift.
